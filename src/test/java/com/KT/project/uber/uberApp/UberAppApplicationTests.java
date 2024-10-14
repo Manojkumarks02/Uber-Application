@@ -1,4 +1,4 @@
-package com._KT.project.uber.uberApp;
+package com.KT.project.uber.uberApp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
