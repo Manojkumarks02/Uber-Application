@@ -23,6 +23,8 @@ public class Driver {
 
     private Boolean available;
 
+    private  String vehicleId;
+
     @OneToOne
     @JoinColumn(name = "user_id")
     private User user;
