@@ -1,12 +1,13 @@
 package com.KT.project.uber.uberApp.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.geolatte.geom.Point;
 
-import javax.persistence.*;
+
 
 @Entity
 @Getter
@@ -30,5 +31,5 @@ public class Driver {
     private User user;
 
     @Column(columnDefinition = "Geometry(Point,4326)")  // deals with the earth geometry
-    Point currentLocation;
+    private Point currentLocation;
 }

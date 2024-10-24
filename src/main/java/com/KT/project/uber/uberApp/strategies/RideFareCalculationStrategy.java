@@ -7,5 +7,5 @@ public interface RideFareCalculationStrategy {
 
   double  RIDE_FARE_MULTIPLIER= 10;
 
-    double calculate (RideRequest rideRequest);
+    double calculateFare(RideRequest rideRequest);
 }

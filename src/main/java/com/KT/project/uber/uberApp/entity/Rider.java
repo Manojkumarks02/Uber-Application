@@ -1,9 +1,9 @@
 package com.KT.project.uber.uberApp.entity;
 
 
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
 
 @Entity
 @Getter
