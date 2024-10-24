@@ -7,10 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DriverDto {
+public class DriverDto{
 
     private UserDto user;
     private double rating;
-
     private  String vehicleId;
 }

@@ -6,10 +6,7 @@ import com.KT.project.uber.uberApp.entity.enums.RideRequestStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
-import org.locationtech.jts.geom.Point;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Data
@@ -23,4 +20,5 @@ public class RideRequestDto {
     private Rider rider;
     private PaymentMethod paymentMethod;
     private RideRequestStatus rideRequestStatus;
+    private double fare;
 }
