@@ -1,6 +1,5 @@
 package com.KT.project.uber.uberApp.service;
 
-import com.KT.project.uber.uberApp.dto.DriverDto;
 import com.KT.project.uber.uberApp.dto.RideDto;
 import com.KT.project.uber.uberApp.dto.RideRequestDto;
 import com.KT.project.uber.uberApp.entity.Rider;

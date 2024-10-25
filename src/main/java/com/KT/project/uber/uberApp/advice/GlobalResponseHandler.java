@@ -1,8 +1,6 @@
 package com.KT.project.uber.uberApp.advice;
 
-import org.aspectj.weaver.tools.ISupportsMessageContext;
 import org.springframework.core.MethodParameter;
-import org.springframework.http.HttpMessage;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.server.ServerHttpRequest;

@@ -5,7 +5,6 @@ import com.KT.project.uber.uberApp.entity.enums.PaymentStatus;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
-
 import java.time.LocalDateTime;
 
 @Entity

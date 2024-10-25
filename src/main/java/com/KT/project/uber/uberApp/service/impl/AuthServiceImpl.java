@@ -3,7 +3,6 @@ package com.KT.project.uber.uberApp.service.impl;
 import com.KT.project.uber.uberApp.dto.DriverDto;
 import com.KT.project.uber.uberApp.dto.SignUpDto;
 import com.KT.project.uber.uberApp.dto.UserDto;
-import com.KT.project.uber.uberApp.entity.Rider;
 import com.KT.project.uber.uberApp.entity.User;
 import com.KT.project.uber.uberApp.entity.enums.Role;
 import com.KT.project.uber.uberApp.exception.RuntimeConflictException;
@@ -14,7 +13,6 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
 
 import java.util.Set;
 

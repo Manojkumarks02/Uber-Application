@@ -2,8 +2,9 @@ package com.KT.project.uber.uberApp.entity;
 
 import com.KT.project.uber.uberApp.entity.enums.TransactionMethod;
 import com.KT.project.uber.uberApp.entity.enums.TransactionType;
-import org.hibernate.annotations.CreationTimestamp;
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+
 import java.time.LocalDateTime;
 
 @Entity

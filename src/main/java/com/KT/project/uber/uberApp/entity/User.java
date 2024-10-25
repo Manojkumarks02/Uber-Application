@@ -2,11 +2,12 @@ package com.KT.project.uber.uberApp.entity;
 
 
 import com.KT.project.uber.uberApp.entity.enums.Role;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import jakarta.persistence.*;
+
 import java.util.Set;
 
 @Entity

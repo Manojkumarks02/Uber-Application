@@ -1,6 +1,7 @@
 package com.KT.project.uber.uberApp.entity;
 
 import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity

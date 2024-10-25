@@ -1,12 +1,10 @@
 package com.KT.project.uber.uberApp.service.impl;
 
-import com.KT.project.uber.uberApp.exception.RuntimeConflictException;
 import com.KT.project.uber.uberApp.service.DistanceService;
 import lombok.Data;
 import org.locationtech.jts.geom.Point;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
-import org.springframework.web.client.RestClientResponseException;
 
 import java.util.List;
 
