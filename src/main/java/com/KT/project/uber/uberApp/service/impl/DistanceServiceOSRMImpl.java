@@ -13,7 +13,8 @@ import java.util.List;
 @Service
 public class DistanceServiceOSRMImpl implements DistanceService {
 
-    private static final String OSRM_API_BASE_URL = "https://router.project-osrm.org/route/v1/driving/13.388860,52.517037;13.397634,52.529407?overview=false";
+    //https://router.project-osrm.org/route/v1/driving/13.388860,52.517037;13.397634,52.529407?overview=false
+    private static final String OSRM_API_BASE_URL = "https://router.project-osrm.org/route/v1/driving/";
     @Override
     public double calculateDistance(Point src, Point dest) {
         //calling third party API called OSRM to fetch the distance
