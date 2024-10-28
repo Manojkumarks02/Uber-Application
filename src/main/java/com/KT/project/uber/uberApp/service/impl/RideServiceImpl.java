@@ -25,10 +25,11 @@ public class RideServiceImpl implements RideService {
     private final RideRepository rideRepository;
     private final RideRequestService rideRequestService;
     private final ModelMapper modelMapper;
+
     @Override
     public Ride getRideById(Long rideId) {
         return rideRepository.findById(rideId)
-                .orElseThrow(() -> new ResourceNotFoundException( "ride with the id is nor found" + rideId));
+                .orElseThrow(() -> new ResourceNotFoundException("ride with the id is nor found" + rideId));
     }
 
     @Override
@@ -46,7 +47,7 @@ public class RideServiceImpl implements RideService {
         ride.setOtp(generateRandomOTP());
         ride.setId(null);
         rideRequestService.update(rideRequest);
-         return  rideRepository.save(ride);
+        return  rideRepository.save(ride);
 
     }
 
