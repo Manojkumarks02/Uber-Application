@@ -31,6 +31,9 @@ public class Ride {
     private LocalDateTime createdTime;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    private Rider rider;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     private Driver driver;
 
     @Enumerated(EnumType.STRING)
