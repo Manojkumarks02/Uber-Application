@@ -115,7 +115,7 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public Page<RideDto> getAllMyRide(PageRequest pageRequest) {
         Driver currentDriver = getCurrentDriver();
-        return  rideService.getAllRidesOfDriver(currentDriver.getId(),pageRequest).map(
+        return  rideService.getAllRidesOfDriver(currentDriver,pageRequest).map(
                 ride -> modelMapper.map(ride, RideDto.class)
         );
     }

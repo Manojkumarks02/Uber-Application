@@ -4,6 +4,7 @@ import com.KT.project.uber.uberApp.dto.RideRequestDto;
 import com.KT.project.uber.uberApp.entity.Driver;
 import com.KT.project.uber.uberApp.entity.Ride;
 import com.KT.project.uber.uberApp.entity.RideRequest;
+import com.KT.project.uber.uberApp.entity.Rider;
 import com.KT.project.uber.uberApp.entity.enums.RideRequestStatus;
 import com.KT.project.uber.uberApp.entity.enums.RideStatus;
 import com.KT.project.uber.uberApp.exception.ResourceNotFoundException;
@@ -53,13 +54,13 @@ public class RideServiceImpl implements RideService {
     }
 
     @Override
-    public Page<Ride> getAllRidesOfRider(Long rideId, PageRequest pageRequest) {
-        return null;
+    public Page<Ride> getAllRidesOfRider(Rider rider, PageRequest pageRequest) {
+        return rideRepository.findByRider(rider, pageRequest);
     }
 
     @Override
-    public Page<Ride> getAllRidesOfDriver(Long DriverId, PageRequest pageRequest) {
-        return null;
+    public Page<Ride> getAllRidesOfDriver(Driver driver, PageRequest pageRequest) {
+        return rideRepository.findByDriver(driver, pageRequest);
     }
 
     private String generateRandomOTP(){
