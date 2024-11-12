@@ -1,7 +1,11 @@
-package com.KT.project.uber.uberApp.strategies.impl;
+package com.KT.project.uber.uberApp.strategies;
 
 import com.KT.project.uber.uberApp.strategies.DriverMatchingStrategy;
 import com.KT.project.uber.uberApp.strategies.RideFareCalculationStrategy;
+import com.KT.project.uber.uberApp.strategies.impl.DriverMatchingHighestRatedDriverStrategy;
+import com.KT.project.uber.uberApp.strategies.impl.DriverMatchingNearestDriverStrategy;
+import com.KT.project.uber.uberApp.strategies.impl.RideFareSurgePricingFareCalculationStrategy;
+import com.KT.project.uber.uberApp.strategies.impl.RiderFareDefaultFareCalculationStrategy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

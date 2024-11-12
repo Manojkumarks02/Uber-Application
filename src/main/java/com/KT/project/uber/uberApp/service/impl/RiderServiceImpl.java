@@ -11,7 +11,7 @@ import com.KT.project.uber.uberApp.repository.RiderRepository;
 import com.KT.project.uber.uberApp.service.DriverService;
 import com.KT.project.uber.uberApp.service.RideService;
 import com.KT.project.uber.uberApp.service.RiderService;
-import com.KT.project.uber.uberApp.strategies.impl.RideStrategyManager;
+import com.KT.project.uber.uberApp.strategies.RideStrategyManager;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
