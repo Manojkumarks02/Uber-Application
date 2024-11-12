@@ -5,6 +5,7 @@ import com.KT.project.uber.uberApp.entity.Payment;
 import com.KT.project.uber.uberApp.entity.Rider;
 import com.KT.project.uber.uberApp.entity.enums.PaymentStatus;
 import com.KT.project.uber.uberApp.entity.enums.TransactionMethod;
+import com.KT.project.uber.uberApp.repository.PaymentRepository;
 import com.KT.project.uber.uberApp.service.PaymentService;
 import com.KT.project.uber.uberApp.service.WalletService;
 import com.KT.project.uber.uberApp.strategies.PaymentStrategy;
@@ -17,7 +18,7 @@ import org.springframework.stereotype.Service;
 public class WalletPaymentStrategy implements PaymentStrategy {
 
     private final WalletService walletService;
-    private final PaymentService paymentService;
+    private final PaymentRepository paymentRepository;
 
     @Override
     @Transactional
@@ -33,7 +34,7 @@ public class WalletPaymentStrategy implements PaymentStrategy {
         walletService.addMoneyToWallet(driver.getUser(),
                 driverCut,null,payment.getRide(),TransactionMethod.RIDE);
 
-        paymentService.updatePaymentStatus(payment, PaymentStatus.CONFIRMED);
-
+        payment.setPaymentStatus(PaymentStatus.CONFIRMED);
+        paymentRepository.save(payment);
     }
 }
