@@ -1,10 +1,7 @@
 package com.KT.project.uber.uberApp.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.geolatte.geom.Point;
 
 
@@ -14,6 +11,10 @@ import org.geolatte.geom.Point;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+//@Table(indexes= {
+//        @Index(name="")
+//})
 public class Driver {
 
     @Id

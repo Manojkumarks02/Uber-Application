@@ -10,5 +10,5 @@ public interface AuthService {
 
     UserDto signUp(SignUpDto signUpDto);
 
-    DriverDto onboardNewDriver(Long userId);
+    DriverDto onboardNewDriver(Long userId,String vehicleId);
 }

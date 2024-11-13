@@ -3,11 +3,14 @@ package com.KT.project.uber.uberApp.service.impl;
 import com.KT.project.uber.uberApp.dto.DriverDto;
 import com.KT.project.uber.uberApp.dto.SignUpDto;
 import com.KT.project.uber.uberApp.dto.UserDto;
+import com.KT.project.uber.uberApp.entity.Driver;
 import com.KT.project.uber.uberApp.entity.User;
 import com.KT.project.uber.uberApp.entity.enums.Role;
+import com.KT.project.uber.uberApp.exception.ResourceNotFoundException;
 import com.KT.project.uber.uberApp.exception.RuntimeConflictException;
 import com.KT.project.uber.uberApp.repository.UserRepository;
 import com.KT.project.uber.uberApp.service.AuthService;
+import com.KT.project.uber.uberApp.service.DriverService;
 import com.KT.project.uber.uberApp.service.RiderService;
 import com.KT.project.uber.uberApp.service.WalletService;
 import jakarta.transaction.Transactional;
@@ -25,6 +28,7 @@ public class AuthServiceImpl implements AuthService {
     private final UserRepository userRepository;
     private final RiderService riderService;
     private final WalletService walletService;
+    private final DriverService driverService;
 
 
     @Override
@@ -54,7 +58,25 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public DriverDto onboardNewDriver(Long userId) {
-        return null;
+    public DriverDto onboardNewDriver(Long userId, String vehicleId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() ->new ResourceNotFoundException("user not found with id : " + userId));
+
+        if (user.getRoles().contains(Role.DRIVER)){
+            throw new RuntimeException("user with id" + userId +" is already a driver");
+        }
+
+        Driver createDriver = Driver.builder()
+                .user(user)
+                .rating(0.0)
+                .vehicleId(vehicleId)
+                .available(true)
+                .build();
+        user.getRoles().add(Role.DRIVER);
+        userRepository.save(user);
+        Driver savedDriver = driverService.createNewDriver(createDriver);
+
+        return modelMapper.map(savedDriver, DriverDto.class);
+
     }
 }

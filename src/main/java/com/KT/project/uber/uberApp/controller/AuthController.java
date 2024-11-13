@@ -1,15 +1,14 @@
 package com.KT.project.uber.uberApp.controller;
 
+import com.KT.project.uber.uberApp.dto.DriverDto;
+import com.KT.project.uber.uberApp.dto.OnBoardDriverDto;
 import com.KT.project.uber.uberApp.dto.SignUpDto;
 import com.KT.project.uber.uberApp.dto.UserDto;
 import com.KT.project.uber.uberApp.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
@@ -23,5 +22,10 @@ public class AuthController {
         return new ResponseEntity<>(authService.signUp(signUpDto), HttpStatus.CREATED);
     }
 
+    @PostMapping("/onBoardNewDriver/{userId}")
+    ResponseEntity<DriverDto> onBoardNewDriver(@PathVariable Long userId, @RequestBody OnBoardDriverDto onBoardDriverDto ){
+        return new ResponseEntity<>(authService.onboardNewDriver(userId, onBoardDriverDto.getVehicleId()), HttpStatus.CREATED);
+
+    }
 
 }
