@@ -12,9 +12,9 @@ import org.geolatte.geom.Point;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-//@Table(indexes= {
-//        @Index(name="")
-//})
+@Table(indexes= {
+        @Index(name="idx_driver_vehicle_id", columnList = "vehicleId")
+})
 public class Driver {
 
     @Id

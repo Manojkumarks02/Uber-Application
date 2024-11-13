@@ -18,6 +18,9 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(indexes = {
+        @Index(name = "idx_ride_request_rider", columnList = "ride_id")
+})
 public class RideRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
