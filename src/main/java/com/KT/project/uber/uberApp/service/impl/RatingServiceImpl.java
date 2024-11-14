@@ -30,6 +30,9 @@ public class RatingServiceImpl implements RatingService {
         Rating ratingObj = ratingRepository.findByRide(ride)
                 .orElseThrow(() -> new ResourceNotFoundException("rating not found for ride with id : " + ride.getId()));
 
+        if(ratingObj.getDriverRating() != null){
+            throw new RuntimeException("Driver has been already rated, cannot rate again");
+        }
         ratingObj.setDriverRating(rating);
         ratingRepository.save(ratingObj);
 
@@ -50,6 +53,10 @@ public class RatingServiceImpl implements RatingService {
         Rider rider = ride.getRider();
         Rating ratingObj = ratingRepository.findByRide(ride)
                 .orElseThrow(() -> new ResourceNotFoundException("rating not found for ride with id : " + ride.getId()));
+
+        if(ratingObj.getRiderRating() != null){
+            throw new RuntimeException("Rider has been already rated, cannot rate again");
+        }
 
         ratingObj.setRiderRating(rating);
         ratingRepository.save(ratingObj);
