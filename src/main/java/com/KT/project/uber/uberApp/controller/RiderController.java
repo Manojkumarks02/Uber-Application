@@ -1,9 +1,6 @@
 package com.KT.project.uber.uberApp.controller;
 
-import com.KT.project.uber.uberApp.dto.DriverDto;
-import com.KT.project.uber.uberApp.dto.RatingDto;
-import com.KT.project.uber.uberApp.dto.RideDto;
-import com.KT.project.uber.uberApp.dto.RideRequestDto;
+import com.KT.project.uber.uberApp.dto.*;
 import com.KT.project.uber.uberApp.service.RiderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -46,6 +43,11 @@ public class RiderController  {
         PageRequest pageRequest = PageRequest.of(pageOffSet, pageSize, Sort.by(Sort.Direction.DESC, "createdTime", "id "));
         return ResponseEntity.ok(riderService.getAllMyRide(pageRequest));
 
+    }
+
+    @PostMapping("/rateDriver/{driverId}/{rating}")
+    public ResponseEntity<DriverDto> rateDriver(@PathVariable Long driverId, @PathVariable Integer rating){
+        return ResponseEntity.ok(riderService.rateDriver(driverId,rating));
     }
 
 }
